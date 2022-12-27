@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
-    "dev": "concurrently \"vite\" \"sass --watch src/styles/styles.scss:src/app.css\"",
+    "dev": "concurrently \"sass --watch --no-source-map src/styles/sass:src/styles/css/\" \"vite\"",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.57.1"

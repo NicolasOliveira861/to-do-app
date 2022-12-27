@@ -1,0 +1,57 @@
+.content-container {
+  max-width: 600px;
+  margin: 2.5rem auto;
+  background: #8fc1e2;
+  border-radius: 5px;
+  padding: 1.5rem;
+
+  .greetings {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .to-do-list {
+    display: flex;
+    flex-direction: column;
+
+    .to-do-item {
+      font-size: 1rem;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      &.new-item {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #111111;
+        float: none;
+        width: fit-content;
+        min-width: 300px;
+
+        input {
+          background: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          font-size: 1rem;
+
+          &::placeholder {
+            color: #000;
+          }
+        }
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,14 @@
-import './app.css';
+import Container from './app/components/container';
+import { Navbar } from './app/components/navbar';
+import './styles/css/main.css';
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <Navbar />
+
+      <Container />
+    </>
   );
 };
 

@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  padding: 1.5rem;
+  background: #afbbe3;
+}
+.navbar span {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
