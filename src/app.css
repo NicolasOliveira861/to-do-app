@@ -1,0 +1,11 @@
+.app {
+  background: red;
+  width: 100vw;
+  height: 100vh;
+}
+.app h1 {
+  font-weight: 100;
+  text-shadow: none;
+}
+
+/*# sourceMappingURL=app.css.map */
