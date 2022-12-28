@@ -132,6 +132,8 @@ table {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 button,
@@ -141,4 +143,8 @@ input[type='button'] {
   border: none;
   background: none;
   cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
 }

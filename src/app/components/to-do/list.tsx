@@ -1,23 +1,15 @@
+import { useToDoContext } from '../../context/ToDoContext';
+import { ToDoItemProps } from '../../typings/toDo';
 import ToDoItem from './item';
 import { NewItem } from './new';
 
 const ToDoList = () => {
-  const defaultList = [
-    {
-      content: 'React based to-do app...',
-    },
-    {
-      content: 'Made with React, TypeScript and Sass...',
-    },
-    {
-      content: 'Manage your items with the power of React!',
-    },
-  ];
+  const { items } = useToDoContext();
 
   return (
     <div className="to-do-list">
-      {defaultList.map((item) => (
-        <ToDoItem content={item.content} />
+      {items.map((item: ToDoItemProps, idx) => (
+        <ToDoItem id={item.id} key={item.id} content={item.value} />
       ))}
 
       <NewItem />

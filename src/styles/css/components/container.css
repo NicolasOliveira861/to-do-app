@@ -19,9 +19,40 @@
 }
 .content-container .to-do-list .to-do-item {
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.content-container .to-do-list .to-do-item .to-do-delete-item {
+  vertical-align: bottom;
+  display: flex;
 }
 .content-container .to-do-list .to-do-item:not(:last-child) {
   margin-bottom: 10px;
+}
+.content-container .to-do-list .to-do-item input[type=checkbox] {
+  appearance: none;
+  font: inherit;
+  color: #111111;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #111111;
+  border-radius: 2px;
+  transform: translateY(-0.075em);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-container .to-do-list .to-do-item input[type=checkbox]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #111111;
+  display: none;
+}
+.content-container .to-do-list .to-do-item input[type=checkbox]:checked::before {
+  display: block;
 }
 .content-container .to-do-list .to-do-item.new-item {
   margin-top: 1rem;
@@ -38,6 +69,7 @@
   color: #000;
   outline: none;
   font-size: 1rem;
+  min-width: fit-content;
 }
 .content-container .to-do-list .to-do-item.new-item input::placeholder {
   color: #000;

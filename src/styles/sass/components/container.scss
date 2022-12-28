@@ -20,9 +20,44 @@
 
     .to-do-item {
       font-size: 1rem;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+
+      .to-do-delete-item {
+        vertical-align: bottom;
+        display: flex;
+      }
 
       &:not(:last-child) {
         margin-bottom: 10px;
+      }
+
+      input[type='checkbox'] {
+        appearance: none;
+        font: inherit;
+        color: #111111;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #111111;
+        border-radius: 2px;
+        transform: translateY(-0.075em);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          background: #111111;
+          display: none;
+        }
+
+        &:checked::before {
+          display: block;
+        }
       }
 
       &.new-item {
@@ -40,6 +75,7 @@
           color: #000;
           outline: none;
           font-size: 1rem;
+          min-width: fit-content;
 
           &::placeholder {
             color: #000;
