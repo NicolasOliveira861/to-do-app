@@ -188,6 +188,9 @@ input[type=button]:disabled {
   align-items: center;
   column-gap: 8px;
 }
+.content-container .to-do-list .to-do-item.selected span {
+  text-decoration: line-through;
+}
 .content-container .to-do-list .to-do-item .to-do-delete-item {
   vertical-align: bottom;
   display: flex;

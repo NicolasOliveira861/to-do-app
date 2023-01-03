@@ -24,6 +24,12 @@
       align-items: center;
       column-gap: 8px;
 
+      &.selected {
+        span {
+          text-decoration: line-through;
+        }
+      }
+
       .to-do-delete-item {
         vertical-align: bottom;
         display: flex;

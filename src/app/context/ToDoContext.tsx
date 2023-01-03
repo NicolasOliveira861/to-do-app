@@ -1,17 +1,28 @@
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
 import { defaultItems } from '../mock/defaultItems';
-import { ToDoContextProps, ToDoItemProps } from '../typings/toDo';
+import {
+  ToDoContextProps,
+  ToDoItemIdentificator,
+  ToDoItemProps,
+} from '../typings/toDo';
 
 const ToDoContext = createContext<ToDoContextProps>({
   items: defaultItems,
   setItems: () => {},
+  selectedItems: [],
+  setSelectedItems: () => {},
 });
 
 const ToDo = ({ children }: PropsWithChildren) => {
   const [items, setItems] = useState<ToDoItemProps[]>(defaultItems);
+  const [selectedItems, setSelectedItems] = useState<ToDoItemIdentificator[]>(
+    []
+  );
 
   return (
-    <ToDoContext.Provider value={{ items, setItems }}>
+    <ToDoContext.Provider
+      value={{ items, setItems, selectedItems, setSelectedItems }}
+    >
       {children}
     </ToDoContext.Provider>
   );
