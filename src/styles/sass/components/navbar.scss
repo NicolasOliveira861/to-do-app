@@ -3,8 +3,10 @@
   padding: 1.5rem;
   background: #afbbe3;
 
-  span {
-    font-size: 1.5rem;
-    font-weight: 400;
+  .greetings {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    width: 100%;
   }
 }

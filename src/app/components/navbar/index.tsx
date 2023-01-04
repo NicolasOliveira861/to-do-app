@@ -1,7 +1,9 @@
+import { Greetings } from '../UI/greetings';
+
 export const Navbar = () => {
   return (
     <header className="navbar">
-      <span>To-Do App</span>
+      <Greetings />
     </header>
   );
 };
