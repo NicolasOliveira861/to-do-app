@@ -1,4 +1,11 @@
-import { createContext, PropsWithChildren, useContext, useState } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { defaultItems } from '../mock/defaultItems';
 import {
   ToDoContextProps,
@@ -14,10 +21,28 @@ const ToDoContext = createContext<ToDoContextProps>({
 });
 
 const ToDo = ({ children }: PropsWithChildren) => {
-  const [items, setItems] = useState<ToDoItemProps[]>(defaultItems);
-  const [selectedItems, setSelectedItems] = useState<ToDoItemIdentificator[]>(
-    []
+  const selected = useLocalStorage('selectedItems');
+  const oldItems = useLocalStorage('items');
+
+  const storageSelectedItems = selected.get() as ToDoItemIdentificator[];
+  const storageItems = oldItems.get() as ToDoItemProps[];
+
+  const [items, setItems] = useState<ToDoItemProps[]>(
+    storageItems && storageItems.length > 0 ? storageItems : defaultItems
   );
+  const [selectedItems, setSelectedItems] = useState<ToDoItemIdentificator[]>(
+    storageSelectedItems && storageSelectedItems.length > 0
+      ? storageSelectedItems
+      : []
+  );
+
+  useEffect(() => {
+    selected.set(selectedItems as []);
+  }, [selectedItems]);
+
+  useEffect(() => {
+    oldItems.set(items as []);
+  }, [items]);
 
   return (
     <ToDoContext.Provider
