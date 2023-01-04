@@ -52,7 +52,7 @@ export const NewItem = () => {
         type="button"
         onClick={handleSubmit}
       >
-        <Check size={24} />
+        <Check color="#fff" size={24} />
       </button>
     </div>
   );

@@ -156,7 +156,7 @@ input[type=button]:disabled {
 .navbar {
   display: flex;
   padding: 1.5rem;
-  background: #afbbe3;
+  background: #8fc1e2;
 }
 .navbar .greetings {
   display: flex;
@@ -166,11 +166,12 @@ input[type=button]:disabled {
 }
 
 .content-container {
-  max-width: 600px;
+  width: 60%;
   margin: 2.5rem auto;
-  background: #8fc1e2;
+  background: #4498cf;
   border-radius: 5px;
   padding: 1.5rem;
+  min-height: 500px;
 }
 .content-container .to-do-list {
   display: flex;
@@ -181,6 +182,7 @@ input[type=button]:disabled {
   display: flex;
   align-items: center;
   column-gap: 8px;
+  color: #fff;
 }
 .content-container .to-do-list .to-do-item.selected span {
   text-decoration: line-through;
@@ -195,10 +197,10 @@ input[type=button]:disabled {
 .content-container .to-do-list .to-do-item input[type=checkbox] {
   appearance: none;
   font: inherit;
-  color: #111111;
+  color: #fff;
   width: 16px;
   height: 16px;
-  border: 1px solid #111111;
+  border: 1px solid #fff;
   border-radius: 2px;
   transform: translateY(-0.075em);
   cursor: pointer;
@@ -210,7 +212,7 @@ input[type=button]:disabled {
   content: "";
   width: 10px;
   height: 10px;
-  background: #111111;
+  background: #fff;
   display: none;
 }
 .content-container .to-do-list .to-do-item input[type=checkbox]:checked::before {
@@ -220,21 +222,22 @@ input[type=button]:disabled {
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #111111;
+  border-bottom: 1px solid #fff;
   float: none;
   width: fit-content;
   min-width: 300px;
+  color: #fff;
 }
 .content-container .to-do-list .to-do-item.new-item input {
   background: transparent;
   border: none;
-  color: #000;
+  color: #fff;
   outline: none;
   font-size: 1rem;
   min-width: fit-content;
 }
 .content-container .to-do-list .to-do-item.new-item input::placeholder {
-  color: #000;
+  color: #fff;
 }
 .content-container .to-do-list .to-do-item.new-item button {
   display: flex;
@@ -244,4 +247,8 @@ input[type=button]:disabled {
 
 html {
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #fefefe;
 }

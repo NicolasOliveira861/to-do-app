@@ -7,7 +7,7 @@ export const Greetings = () => {
 
   return (
     <div className="greetings">
-      <h1>Olá! O que temos para hoje?</h1>
+      <h1>Hello there! What do we have for today?</h1>
       <span>{formattedDate}</span>
     </div>
   );

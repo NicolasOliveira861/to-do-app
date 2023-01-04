@@ -32,7 +32,7 @@ const ToDoItem = ({ content, id }: Props) => {
       />
       <span>{content}</span>
       <button className="to-do-delete-item" onClick={() => deleteItem(id)}>
-        <TrashSimple size={24} />
+        <TrashSimple color="#fff" size={24} />
       </button>
     </div>
   );
