@@ -45,7 +45,7 @@ export const NewItem = () => {
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        placeholder="Adicione um novo item..."
+        placeholder="Add a new item..."
       />
       <button
         disabled={value.length === 0 ? true : false}
